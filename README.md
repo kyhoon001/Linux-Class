@@ -39,4 +39,4 @@
 - 예시=> hostnamectl set-hostname server2  와 같이 hostname을 설정 가능
 - hostname을 사용하기 위해서는 /etc/hosts의 내용에 예시) 192.168.111.101 server1 192.168.111.102 server2 와 같이 이름을 등록해주어야 함. 
 
--       테스트
+    -   테스트
