@@ -26,17 +26,14 @@
 
 
 
-- clone 만들기.
+### clone 만들기.
 - clone을 만들기 위해 서버가 설치된 폴더를 복사, 붙여넣기로 만듬.
-- 복사한 폴더에 들어가서 configurationfile을 켠 후 이 중 displayName = "server2"로 바꿔줌.
-- 이후 vmware에서 open a virtual machine으로 접근하여 이를 등록해여 줌.
-- 다음에 setting -> network adapter에서 mac-address를 바꿈.
-` 바꾼 mac-address를 복사해둬야함
-- 실행할 때 move옵션을 선택하여야 함.
+    - 복사한 폴더에 들어가서 configurationfile을 켠 후 이 중 displayName = "server2"로 바꿔줌.
+    - 이후 vmware에서 open a virtual machine으로 접근하여 이를 등록해여 줌.
+    - 다음에 setting -> network adapter에서 mac-address를 바꿈.
+    - 바꾼 mac-address를 복사해둬야함
+    - 실행할 때 move옵션을 선택하여야 함.
+    - 이후 ifcfg-eno16777736에서 mac address 파트를 바뀐 mac address로 바꾸고, ip주소도 바꿔주어야 함. 변경 후에는 항상 systemctl restart network
 
-- 이후 ifcfg-eno16777736에서 mac address 파트를 바뀐 mac address로 바꾸고, ip주소도 바꿔주어야 함. 변경 후에는 항상 systemctl restart network
-
-- 예시=> hostnamectl set-hostname server2  와 같이 hostname을 설정 가능
-- hostname을 사용하기 위해서는 /etc/hosts의 내용에 예시) 192.168.111.101 server1 192.168.111.102 server2 와 같이 이름을 등록해주어야 함. 
-
-    -   테스트
+    - 예시=> hostnamectl set-hostname server2  와 같이 hostname을 설정 가능
+    - hostname을 사용하기 위해서는 /etc/hosts의 내용에 예시) 192.168.111.101 server1 192.168.111.102 server2 와 같이 이름을 등록해주어야 함. 
