@@ -77,3 +77,57 @@
   - 숫자 yy : 현재 커서부터 숫자만큼의 행을 복사
   - p 복사한 내용을 현재 행 이후에 붙여넣기     P : 복사한 내용을 현재 행 이전에 붙여넣기
   - /문자열 : 해당 문자열을 찾음.  ====> n키를 누르면 다음 문자로 이동 
+
+
+
+## 3일차
+
+
+
+mc와 java에 대한 설치를 진행하였습니다. 설치는 rpm, tar, yum 세 가지 방식을 사용하여 진행하였습니다.
+
+
+
+ ln -s /etc/eclipse/usr/bin/eclipse eclipse -> /etc/eclipse를  /usr/bin 디렉토리에 soft link
+
+ln -s /etc/jdk1.8.0/bin/java java -> /etc/jdk1.8.0을 /bin 디렉토리에 soft link.   ==> 만들고자 하는 폴더에서 하기
+
+
+
+
+
+ 	1. 심볼릭 링크에 대한 학습
+     - ex) ln(링크) ~/mc-4.8.7.8.e17.x86_64(예시파일).rpm mch(만들어줄 링크 이름).rpm(하드링크)
+     - ex) ln(링크) -s(소프트링크) ~/mc-4.8.7.8.e17.x86_64(예시파일).rpm mcs(만들어줄 링크 이름).rpm 
+
+
+
+2. rpm 을 통한 설치
+   - rpm -Uvh <파일>.rpm
+3. tar를 통한 설치
+   - tar -xvf <파일>
+   - 하나로 묶기 tar -cvf <만들어질 파일> <압축 대상 파일> (예를 들면 : tar -cvf vitest.tar vitest) => 압축을 위해 파일을 묶는 것
+   - 압축 :  xz (tar 파일)vitest.tar
+   - 압축 해제 : tar xfz <대상 파일이름 .tar.gz> 압축을 풀고 tar도 푼다. 그러나 최근에는 -xvf로도 다 풀린다.
+4. yum을 통한 설치
+   	- yum -y
+
+
+
+5. 압축 관련 (vitest.tar 파일을 압축한다고 가정)
+
+   -  tar -cvf vitest.tar vitest 
+
+   - gzip vitest.tar
+   - bzip2 vitest.tar
+   - zip vitest.tar.zip vitest.tar
+
+
+
+6. 검색 관련
+   - find <찾을 대상 폴더> -name(이름을 기반으로) "*.conf" -perm 644(권한이 644) -size(사이즈가) -3k (3k이하) -user(유저가)
+   - find /root -perm 644 -size -1k -exec(실행한다) ls -l {앞에서 find로 뽑아온 대상} \; 
+     - 결과적으로 find의 결과 하나 하나에 ls -l을 실행한다는 뜻임.
+
+7. 예약설정
+   - /etc 밑에 crontab 파일을 이용해서 예약을 설정할 수 있음.
