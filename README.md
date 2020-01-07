@@ -141,3 +141,39 @@ ln -s /etc/jdk1.8.0/bin/java java -> /etc/jdk1.8.0을 /bin 디렉토리에 soft 
 기존에 설치되어있던 오라클과 마리아 DB를 삭제해주고 다른 버전으로 다시 설치해주었음.
 
 이후 서버/네트워크 설정에서 네트워크 bridged를 설정하는 등의 서버로 동작하기 위한 환경설정을 해주는 작업을 진행하였음.
+
+
+
+
+
+***
+
+## DB설치
+
+maria DB와 MySql 설치
+
+1. yum -y remove mariadb -libs
+
+   리눅스에 이미 설치되어 있는 마리아 DB 라이브러리를 삭제해준다.
+
+2. yum -y localinstall Maria*
+
+   yum 명령어로 MariaDB 설치에 필요한 세가지 파일을 설치함(해당 파일은 미리 다운로드 폴더에 위치시켰음)
+
+3. systemctl restart mysql  , systemctl status mysql 입력
+
+4. firewall-config에서 방화벽 설정을 해주어 사용 가능한 환경을 만듬
+
+
+
+계정 설정
+
+1. mysql  입력하여 실행
+2. mysqladmin -u root password '111111' (실습에서 사용할 root 계정)
+3. mysql -u root -p
+4. mysql -h 192.168.112.102 -u root -p
+5. mysql -h 192.168.112.102 -u muser -p
+
+
+
+oracle 설치
