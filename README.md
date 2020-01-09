@@ -165,6 +165,10 @@ maria DB와 MySql 설치
 4. firewall-config에서 방화벽 설정을 해주어 사용 가능한 환경을 만듬
 
 
+- - 1월 6일 추가부분. 전에 못 했음
+ - rc.local에 swapon /swapfile 만적어줬음
+ - /etc/bashrc에 . /u01/app/oracle/product/11.2.0/xe/bin/oracle_env.sh 적어줬음
+- - 여기까지
 
 계정 설정
 
