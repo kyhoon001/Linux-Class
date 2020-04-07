@@ -181,3 +181,8 @@ maria DB와 MySql 설치
 
 
 oracle 설치
+
+
+
+# Ubuntu 환경
+- 셸 프로그래밍 실습 예정
