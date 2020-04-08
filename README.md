@@ -186,3 +186,9 @@ oracle 설치
 
 # Ubuntu 환경
 - 셸 프로그래밍 실습 예정
+
+- cshell
+```
+sudo apt install csh  ==> install
+To use this shell  ==> /bin/csh
+```
