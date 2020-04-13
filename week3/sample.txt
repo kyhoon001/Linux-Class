@@ -1,0 +1,21 @@
+Hello, World!
+Hello, World!
+enp0s3    Link encap:Ethernet  HWaddr 08:00:27:4b:20:14  
+          inet addr:10.0.2.15  Bcast:10.0.2.255  Mask:255.255.255.0
+          inet6 addr: fe80::870a:cea3:6a8e:3dc/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:3207 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:1240 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:3153957 (3.1 MB)  TX bytes:87918 (87.9 KB)
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:300 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:300 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:24953 (24.9 KB)  TX bytes:24953 (24.9 KB)
+
+Hello, World!
