@@ -15,20 +15,20 @@ int main()
 	int *cal_num;
 	void *shared_memory = (void*)0;
 
-	shmid = shmget((key_t)0x1234, sizeof(int),0, 0666 | IPC_CREAT );
+	shmid = shmget((key_t)1234, sizeof(int), 0666 | IPC_CREAT );
 
 	if(shmid == -1) {
 		perror("shmid");
 		exit(0);
 	}
 
-	shared_memory = shmat(shmid, (void*)0,0);
-	if(shared_memory == (void*)-1) {
+	shared_memory = shmat(shmid, (void *)0,0);
+	if(shared_memory == (void *)-1) {
 		perror("shmat failed :");
 		exit(0);
 	}
 	
-	cal_num = (int*) shared_memory;
+	cal_num = (int *) shared_memory;
 	pid = fork();
 	
 	if(pid == 0) {
@@ -37,7 +37,7 @@ int main()
 			perror("shmget failed : ");
 			exit(0);
 		}
-		shared_memory = shmat(shmid (void*)0, 0666 | IPC_CREAT);
+		shared_memory = shmat(shmid, (void*)0, 0666 | IPC_CREAT);
 		if(shared_memory == (void*)-1) {
 			perror("shmat failed: ");
 			exit(0);
