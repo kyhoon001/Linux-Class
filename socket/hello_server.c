@@ -7,6 +7,11 @@
 #include <string.h>
 
 
+void error_handling(char* message) {
+	fputs(message, stderr);
+	fputc('\n',stderr);
+	exit(1);
+}
 
 
 
@@ -29,8 +34,7 @@ int main(int argc, char** argv)
 	printf("%s %s %d\n", __FILE__, __func__, __LINE__);
 	serv_sock = socket(PF_INET,SOCK_STREAM, IPPROTO_TCP);
 	if(serv_sock == -1) {
-		perror("socket error");
-		exit(1);
+		error_handling("socket error");
 	}
 	memset(&serv_addr, 0, sizeof(serv_addr));
 	serv_addr.sin_family = AF_INET;
@@ -39,13 +43,13 @@ int main(int argc, char** argv)
 
 
 	if(bind(serv_sock, (struct sockaddr*) &serv_addr,sizeof(serv_addr))==-1){
-		perror("bind error");
-		exit(1);
+		error_handling("bind error");
 	}
 
 	if(listen(serv_sock,5) == -1) {
-		perror("listen error");
-		exit(1);
+	//5 means how many clients can wait there turns.
+	//So, in this code, 5 clients can wait the accept
+		error_handling("listen error");
 	}
 
 	printf("%s %s %d\n", __FILE__, __func__, __LINE__);
@@ -53,6 +57,7 @@ int main(int argc, char** argv)
 
 	write(clnt_sock,message,sizeof(message));
 	close(clnt_sock);
+	close(serv_sock);
 
 
 
