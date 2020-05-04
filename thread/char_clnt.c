@@ -70,12 +70,11 @@ void * recv_msg(void* arg)
 	char name_msg[BUFSIZ];
 	int str_len;
 	while(1) {
-		str_len= read(sock, name_msg, BUFSIZ);
+		str_len= read(sock, name_msg, BUFSIZ-1);
 		if(str_len==-1)
 			return (void*)-1;
 		name_msg[str_len] = 0;
 		fputs(name_msg, stdout);
 	}
-	printf("recv end\n");
 	return NULL;
 }
