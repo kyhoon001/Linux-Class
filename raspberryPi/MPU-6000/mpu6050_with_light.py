@@ -79,16 +79,16 @@ try :
         data = str(aX) + ',' + str(aY) + '$'
         print(data)
 
-        if aX < 0.7 or aX > -0.5:
+        if aX < 1.45:
             GPIO.output(LED1,GPIO.HIGH)
         else :
             GPIO.output(LED1,GPIO.LOW)
 
-        if aY < -0.5 or aY > 0.5:
+        if aY < -0.45:
             GPIO.output(LED2,GPIO.HIGH)
         else :
             GPIO.output(LED2,GPIO.LOW)
-
+        time.sleep(0.3)
         
 
 except KeyboardInterrupt:
@@ -99,4 +99,4 @@ except:
 
 finally:
     bus.close()
-GPIO.cleanup()
+    GPIO.cleanup()
