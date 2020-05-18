@@ -1,6 +1,8 @@
 from smbus2 import SMBus
 from bitstring import Bits
 import math
+import time
+import RPi.GPIO as GPIO
 
 bus = SMBus(1)
 DEV_ADDR = 0x68
@@ -58,6 +60,12 @@ def get_y_rotation(x,y,z) :
 #reset
 bus.write_byte_data(DEV_ADDR,0x6B, 0b00000000)
 
+GPIO.setmode(GPIO.BCM)
+LED1 = 17
+LED2 = 18
+
+GPIO.setup(LED1, GPIO.OUT, initial=GPIO.LOW)
+GPIO.setup(LED2, GPIO.OUT, initial=GPIO.LOW)
 
 
 try :
@@ -71,6 +79,18 @@ try :
         data = str(aX) + ',' + str(aY) + '$'
         print(data)
 
+        if aX < 0.7 or aX > -0.5:
+            GPIO.output(LED1,GPIO.HIGH)
+        else :
+            GPIO.output(LED1,GPIO.LOW)
+
+        if aY < -0.5 or aY > 0.5:
+            GPIO.output(LED2,GPIO.HIGH)
+        else :
+            GPIO.output(LED2,GPIO.LOW)
+
+        
+
 except KeyboardInterrupt:
     print("\nInterrupted!")
 
@@ -79,3 +99,4 @@ except:
 
 finally:
     bus.close()
+GPIO.cleanup()

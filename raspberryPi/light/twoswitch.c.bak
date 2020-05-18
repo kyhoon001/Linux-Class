@@ -1,0 +1,57 @@
+#include <stdio.h>
+#include <wiringPi.h>
+
+#define LED 1
+#define KEY 7
+#define STOP 2
+
+
+int main(int argc, char ** argv)
+{
+	wiringPiSetup();
+	pinMode(LED,OUTPUT);
+	pinMode(KEY,INPUT);
+
+	int pressed;
+	int ex;
+
+	int l = 0;
+	printf("start..\n");
+	digitalWrite(LED,LOW);
+	while(1) {
+		pressed = digitalRead(KEY); 
+		ex = digitalRead(STOP);
+		if(pressed == HIGH && l == 0) {
+			printf("light : %d\n",l);
+			printf("Key pressed!!\n");
+			l = 1;
+			printf("turn on\n");
+			digitalWrite(LED,HIGH);
+		}
+
+		else if(pressed == HIGH && l == 1) {
+			printf("light : %d\n",l);
+			printf("Key pressed!!\n");
+			l = 0;
+			printf("turn off\n");
+			digitalWrite(LED,LOW);
+		}
+
+		delay(200);
+		if(ex == HIGH) {
+			printf("exit this program\n");
+			break;
+		}
+	
+	}
+	return 0;
+}
+
+
+
+
+
+
+
+
+
