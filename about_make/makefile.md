@@ -27,8 +27,8 @@
 ```
 // 여기는 마치 변수를 할당하는 것과 같은 역할을 함.
 CC=gcc
-CFLAGS = -g Wall   == gcc 옵션   // Wall의 경우 오류를 출력해줌(?) -W -Wall로도 사용
-OBJS = main.o foo.o bar.o    == 오브젝트 // 목적파일을 의미
+CFLAGS = -W Wall   == gcc 옵션   // Wall의 경우 오류를 출력해줌(?) -W -Wall로도 사용
+OBJS = main.c foo.c bar.c    == 오브젝트 // 목적파일을 의미
 TARGET = app.out        //만들어지는 타겟.
 
 /////////////////////////////////////////
@@ -40,7 +40,7 @@ $(TARGET) : $(OBJS)
     //$@는 타겟의 이름을 의미하고, $^는 타겟의 종속 항목 리스트를 의미함.
 
 clean :
-    rm *.o app.out
+    rm app.out
 
 이런 식으로 사용하면 몹시 간단해짐.
 ```
