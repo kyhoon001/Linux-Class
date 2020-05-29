@@ -1,7 +1,7 @@
-CC : gcc
-CFLAGS : -W -Wall
-OBJS : chicken.c bbq.c bhc.c kfc.c
-TARGET : chicken_exe
+CC = gcc
+CFLAGS = -W -Wall
+OBJS = chicken.c bbq.c bhc.c kfc.c
+TARGET = chicken_exe
 
 all : $(TARGET)
 
