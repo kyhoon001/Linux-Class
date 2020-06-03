@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>376</width>
+    <height>408</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <layout class="QFormLayout" name="formLayout">
+      <item row="0" column="0">
+       <widget class="QLabel" name="Label">
+        <property name="text">
+         <string>본인</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="me">
+        <property name="text">
+         <string>사람1</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="Label_2">
+        <property name="text">
+         <string>상대</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLineEdit" name="you">
+        <property name="text">
+         <string>멋쟁이</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="Label_3">
+        <property name="text">
+         <string>상대나이</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QSpinBox" name="age">
+        <property name="value">
+         <number>25</number>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0" colspan="2">
+       <widget class="QPushButton" name="pushButton_2">
+        <property name="text">
+         <string>clear</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0" colspan="2">
+       <widget class="QPushButton" name="pushButton">
+        <property name="text">
+         <string>결과확인</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>376</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu_File">
+    <property name="title">
+     <string>&amp;File</string>
+    </property>
+    <addaction name="action"/>
+    <addaction name="action_2"/>
+   </widget>
+   <addaction name="menu_File"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="action">
+   <property name="text">
+    <string>결과확인</string>
+   </property>
+  </action>
+  <action name="action_2">
+   <property name="text">
+    <string>clear</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>action</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>187</x>
+     <y>203</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>action_2</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>check()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>187</x>
+     <y>203</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>check()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>30</x>
+     <y>167</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>3</x>
+     <y>166</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>10</x>
+     <y>200</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>3</x>
+     <y>210</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>clear()</slot>
+  <slot>check()</slot>
+ </slots>
+</ui>

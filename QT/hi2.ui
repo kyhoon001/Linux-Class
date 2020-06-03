@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>410</width>
+    <height>419</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="1" column="1">
+       <widget class="QPushButton" name="pushButton">
+        <property name="text">
+         <string>이름변경</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QPushButton" name="pushButton_2">
+        <property name="text">
+         <string>색상변경</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0" colspan="2">
+       <widget class="QFrame" name="frame">
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <widget class="QLabel" name="label">
+         <property name="geometry">
+          <rect>
+           <x>150</x>
+           <y>140</y>
+           <width>71</width>
+           <height>61</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>사람 &lt;br&gt;human</string>
+         </property>
+        </widget>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>colorChange()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>21</x>
+     <y>387</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1</x>
+     <y>388</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>nameChange()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>388</x>
+     <y>401</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>407</x>
+     <y>393</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>colorChange()</slot>
+  <slot>nameChange()</slot>
+ </slots>
+</ui>
