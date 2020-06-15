@@ -1,24 +1,28 @@
-#include <linux/module.h>
+#include <stdio.h>
+#include<fcntl.h>
+#include <unistd.h>
 
-static int minco_init(void)
+int main()
 {
-	printk( KERN_INFO "hi\n");
-	printk( "<0>""hi\n");
-	// printk("<0>""hi" 나 "<0>hi" 나 같음 c언어 문법
-	printk( "<1>"" hi\n");
-	printk( "<2>hi\n");
-	printk( "<3>"" hi\n");
-	printk( "<4>hi\n");
-	printk( "<5>hi\n");
-	printk( "<6>hi\n");
-	printk( "<7>hi\n");
+
+	int fd = open("/dev/coco", O_RDWR);
+	if (fd == -1) {
+		printf("ERROR :: CANNOTREAD /DEV/COCO\n");
+		return 0;
+	}
+
+
+	write(fd, "KFC JJANG\n", 9);
+
+
+	char buf[100];
+	read(fd, buf, 100);
+	printf("%s\n", buf);
+
+	printf("\nGOOD\n");
+	printf("GOOD\n");
+
+
+	close(fd);
 	return 0;
 }
-
-static void minco_exit(void)
-{
-	printk( KERN_INFO "bye\n");
-}
-
-module_init(minco_init);
-module_exit(minco_exit);

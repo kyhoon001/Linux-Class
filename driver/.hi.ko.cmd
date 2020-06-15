@@ -1,1 +1,0 @@
-cmd_/home/pi/Linux-Class/driver/hi.ko := ld -r  -EL -T ./scripts/module-common.lds -T ./arch/arm/kernel/module.lds  --build-id  -o /home/pi/Linux-Class/driver/hi.ko /home/pi/Linux-Class/driver/hi.o /home/pi/Linux-Class/driver/hi.mod.o ;  true

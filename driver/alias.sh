@@ -1,2 +1,2 @@
-alias sc='sudo insmod hi.ko'
-alias sd='sudo rmmod hi'
+alias sc='sudo insmod coco.ko'
+alias sd='sudo rmmod coco'
